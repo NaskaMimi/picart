@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import '../assets/css/styles.css';
 
@@ -7,8 +7,11 @@ import '../assets/css/styles.css';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-    say() {
-        alert("Yay!")
+export class AppComponent implements OnInit
+{
+    urlImage:string;
+
+    say(url:string) {
+        this.urlImage = url;
     }
 }

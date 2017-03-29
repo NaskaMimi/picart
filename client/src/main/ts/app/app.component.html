@@ -1,8 +1,10 @@
 <main>
   <h1>Click on Fluttershy</h1>
 
-    <div (click)="say()">
-        <img src="../assets/images/Fluttershy.png" width="50%" height="50%">
-    </div>
+    <button (click)="say('./client/src/main/ts/assets/images/Fluttershy.png')">Flat1</button>
+    <button (click)="say('./client/src/main/ts/assets/images/second.png')">Flat2</button>
+    <br>
+    <img id="my_image" [src] = "urlImage" width="50%" height="50%">
+
 
 </main>
