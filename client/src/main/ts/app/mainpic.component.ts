@@ -6,6 +6,7 @@ import {WallpaperListingComponent} from './wallpaperlisting.component';
 @Component({
     selector: 'main-pic',
     templateUrl: './mainpic.component.html',
+    styleUrls: ['mainpic.component.css'],
     directives: [ WallpaperListingComponent ]
 })
 
