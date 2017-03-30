@@ -22,4 +22,8 @@ export class MainpicComponent implements OnInit
     say(url:string) {
         document.getElementById("my_image").src = url;
     }
+
+    setDress(url:string) {
+        document.getElementById("dress").src = url;
+    }
 }

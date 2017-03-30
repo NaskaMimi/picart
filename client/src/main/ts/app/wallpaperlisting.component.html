@@ -1,6 +1,8 @@
 <main>
 
 <div class="main-container">
+    <button (click) = "setType('dress')">Dress</button>
+    <button (click) = "setType('top')">Top</button>
     <div class="image-container" *ngFor="let wallpaper of wallpaperListing.wallpapers">
 
         <div (click) = "open(wallpaper.url)" class="actions">
@@ -8,5 +10,8 @@
         </div>
     </div>
     <div *ngIf="error" class="image-container load-more">There was an error connecting to reddit. Please try again later.</div>
+
+    <br>
+    <img id="dress" src="../assets/images/Fluttershy.png">
 </div>
 </main>

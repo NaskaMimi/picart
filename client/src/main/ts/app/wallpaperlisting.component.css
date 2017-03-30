@@ -2,3 +2,10 @@
     height: 500px; /* высота нашего блока */
     overflow-y: scroll; /* прокрутка по вертикали */
 }
+
+#dress {
+    position: absolute;
+    left: 240px;
+    top: 300px;
+    width: 20%;
+}

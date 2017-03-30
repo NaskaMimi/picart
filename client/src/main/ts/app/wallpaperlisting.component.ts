@@ -12,29 +12,44 @@ import {MainpicComponent} from "./mainpic.component";
 export class WallpaperListingComponent implements OnInit
 {
     private wallpaperListing:WallpaperListing;
-    private error:boolean;
+    type:string;
 
     constructor(@Inject(MainpicComponent) private appComponent: MainpicComponent)
     { }
 
     ngOnInit()
     {
-        this.wallpaperListing = this.loadWallpapers(null);
-        //this.appComponent = AppComponent;
+        this.wallpaperListing = this.loadWallpapers();
 
+    }
+
+    setType(type:string)
+    {
+       this.type = type;
+
+        if (this.type == "dress")
+        {
+            this.wallpaperListing = this.loadDresses();
+        }
+        else
+        {
+            this.wallpaperListing = this.loadWallpapers();
+        }
     }
 
     open(url:string)
     {
-        this.appComponent.say(url);
+        if (this.type == "dress")
+        {
+            this.appComponent.setDress(url);
+        }
+        else
+        {
+            this.appComponent.say(url);
+        }
     }
 
-    loadWallpapers(after:string)
-    {
-        return this.mapWallpapers();
-    }
-
-    mapWallpapers()
+    loadWallpapers()
     {
         let listing = new WallpaperListing();
         let wallpapers = new Array<Wallpaper>();
@@ -68,6 +83,26 @@ export class WallpaperListingComponent implements OnInit
         item6.url = "./client/src/main/ts/assets/images/second.png";
         item6.title = "Flut2";
         wallpapers.push(item6);
+
+        listing.wallpapers = wallpapers;
+        listing.after = "";
+        return listing;
+    }
+
+    loadDresses()
+    {
+        let listing = new WallpaperListing();
+        let wallpapers = new Array<Wallpaper>();
+
+        let item = new Wallpaper();
+        item.url = "./client/src/main/ts/assets/images/Fluttershy.png";
+        item.title = "Flut1";
+        wallpapers.push(item);
+
+        let item2 = new Wallpaper();
+        item2.url = "./client/src/main/ts/assets/images/second.png";
+        item2.title = "Flut2";
+        wallpapers.push(item2);
 
         listing.wallpapers = wallpapers;
         listing.after = "";
