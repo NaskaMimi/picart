@@ -1,7 +1,9 @@
 <main>
+    <button (click)="setType('dress')">Dress</button>
+    <button (click)="setType('top')">Top</button>
+    <button (click)="setType('bottom')">Bottom</button>
     <div class="main-container">
-        <button (click)="setType('dress')">Dress</button>
-        <button (click)="setType('top')">Top</button>
+
         <br>
         <div class="image-container" *ngFor="let wallpaper of wallpaperListing.wallpapers">
 

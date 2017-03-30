@@ -17,7 +17,8 @@ export class MainpicComponent implements OnInit
 
     ngOnInit():void
     {
-        this.urlImage = "./client/src/main/ts/assets/images/Fluttershy.png";
+        this.urlImage = "./client/src/main/ts/assets/images/cloth/topik/58.png";
+        document.getElementById("dress").style.opacity = 0;
     }
 
     say(url:string) {
@@ -26,5 +27,22 @@ export class MainpicComponent implements OnInit
 
     setDress(url:string) {
         document.getElementById("dress").src = url;
+        document.getElementById("dress").style.opacity = 1;
+        document.getElementById("top").style.opacity = 0;
+        document.getElementById("bottom").style.opacity = 0;
+    }
+
+    setTop(url:string) {
+        document.getElementById("top").src = url;
+        document.getElementById("dress").style.opacity = 0;
+        document.getElementById("top").style.opacity = 1;
+        document.getElementById("bottom").style.opacity = 1;
+    }
+
+    setBottom(url:string) {
+        document.getElementById("bottom").src = url;
+        document.getElementById("dress").style.opacity = 0;
+        document.getElementById("top").style.opacity = 1;
+        document.getElementById("bottom").style.opacity = 1;
     }
 }

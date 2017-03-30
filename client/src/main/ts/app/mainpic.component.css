@@ -3,16 +3,28 @@
     width: 300px;
 }
 
+#my_image {
+    left: 80px;
+    top: 40px;
+}
+
 #dress {
     position: absolute;
-    left: 140px;
-    top: 250px;
-    width: 90%;
+    left: -26px;
+    top: 45px;
+    width: 130%;
 }
 
 #top {
     position: absolute;
-    left: 140px;
-    top: 200px;
-    width: 90%;
+    left: 55px;
+    top: 65px;
+    width: 65%;
+}
+
+#bottom {
+    position: absolute;
+    left: 73px;
+    top: 145px;
+    width: 53%;
 }
