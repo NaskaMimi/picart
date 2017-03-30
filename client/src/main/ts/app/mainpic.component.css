@@ -1,6 +1,18 @@
+.doll_container{
+    position: relative;
+    width: 300px;
+}
+
 #dress {
     position: absolute;
-    left: 240px;
-    top: 300px;
-    width: 20%;
+    left: 140px;
+    top: 250px;
+    width: 90%;
+}
+
+#top {
+    position: absolute;
+    left: 140px;
+    top: 200px;
+    width: 90%;
 }
