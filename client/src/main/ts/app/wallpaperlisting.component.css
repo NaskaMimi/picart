@@ -1,0 +1,4 @@
+.main-container {
+    height: 500px; /* высота нашего блока */
+    overflow-y: scroll; /* прокрутка по вертикали */
+}

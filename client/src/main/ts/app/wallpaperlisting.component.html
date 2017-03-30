@@ -1,0 +1,12 @@
+<main>
+
+<div class="main-container">
+    <div class="image-container" *ngFor="let wallpaper of wallpaperListing.wallpapers">
+
+        <div (click) = "open(wallpaper.url)" class="actions">
+            <img src="{{wallpaper.url}}" class="image-item" width="20%" height="20%"/>
+        </div>
+    </div>
+    <div *ngIf="error" class="image-container load-more">There was an error connecting to reddit. Please try again later.</div>
+</div>
+</main>

@@ -1,10 +1,14 @@
 <main>
   <h1>Click on Fluttershy</h1>
 
-    <button (click)="say('./client/src/main/ts/assets/images/Fluttershy.png')">Flat1</button>
-    <button (click)="say('./client/src/main/ts/assets/images/second.png')">Flat2</button>
-    <br>
-    <img id="my_image" [src] = "urlImage" width="50%" height="50%">
+    <table>
+        <td valign="top">
+            <main-pic></main-pic>
+        </td>
+        <td valign="top">
+            <wallpaper-listing></wallpaper-listing>
+        </td>
+    </table>
 
 
 </main>
