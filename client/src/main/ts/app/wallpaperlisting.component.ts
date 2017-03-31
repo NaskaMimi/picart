@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject, Injectable } from '@angular/core';
 import { WallpaperListing } from './wallpaperlisting.model';
 import {Wallpaper} from "./wallpaper.model";
 import {MainpicComponent} from "./mainpic.component";
@@ -9,6 +9,7 @@ import {MainpicComponent} from "./mainpic.component";
     styleUrls: ['./wallpaperlisting.component.css'],
     providers: [ MainpicComponent ] })
 
+@Injectable()
 export class WallpaperListingComponent implements OnInit
 {
     private wallpaperListing:WallpaperListing;

@@ -1,9 +1,10 @@
 import { Component} from '@angular/core';
+import {Furniture} from "./furniture.component";
 
 @Component({
     selector: 'room',
     templateUrl: './room.component.html',
-    directives: []
+    directives: [Furniture]
 })
 
 export class RoomComponent

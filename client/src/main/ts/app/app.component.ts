@@ -4,12 +4,13 @@ import '../assets/css/styles.css';
 import {WallpaperListingComponent} from './wallpaperlisting.component';
 import {MainpicComponent} from "./mainpic.component";
 import {RoomComponent} from "./room.component";
+import {MainMenu} from "./mainmenu.component";
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ WallpaperListingComponent, MainpicComponent, RoomComponent ]
+  providers: [ WallpaperListingComponent, MainpicComponent, RoomComponent, MainMenu ]
 })
 
 @Injectable()

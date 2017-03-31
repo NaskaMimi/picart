@@ -25,6 +25,16 @@ export class MainpicComponent implements OnInit
         document.getElementById("my_image").src = url;
     }
 
+    hideThis()
+    {
+        document.getElementById("mainpic-container").style.left = "7300px";
+    }
+
+    showThis()
+    {
+        document.getElementById("mainpic-container").style.left = "0px";
+    }
+
     setDress(url:string) {
         document.getElementById("dress").src = url;
         document.getElementById("dress").style.opacity = 1;
