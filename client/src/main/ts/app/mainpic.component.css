@@ -1,5 +1,7 @@
 .doll_container{
     position: relative;
+    left: 180px;
+    top: 60px;
     width: 300px;
 }
 
