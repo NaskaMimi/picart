@@ -1,19 +1,34 @@
-import { Component, OnInit, ElementRef, Inject} from '@angular/core';
+import { Component, OnInit, ElementRef, Inject, Input} from '@angular/core';
 
 @Component({
     selector: 'furniture',
     templateUrl: './furniture.component.html',
-    providers: []
+    styleUrls: ['furniture.component.css']
 })
 
 export class Furniture implements OnInit
 {
     gravityObject:Array;
     gravityInterval;
+    _url:string;
+    @Input()
+    urlImage:string;
+    urlImage2:string;
+
     ngOnInit():void
     {
         this.gravityObject = [];
+
+        var style = document.getElementById("dragFurn").style;
+        style.position = "absolute";
+        style.top = "0px";
+        style.width = "100%";
+        style.height = "100%";
+        style.backgroundRepeat = "no-repeat";
+        style.backgroundImage = "url('" + this.urlImage + "')";
+
     }
+
     draggableObject:HTMLDivElement = null;
 
     onMouseDown(event:MouseEvent)

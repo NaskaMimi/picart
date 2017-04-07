@@ -1,6 +1,4 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-
-import '../assets/css/styles.css';
 import {WallpaperListingComponent} from './wallpaperlisting.component';
 import {MainpicComponent} from "./mainpic.component";
 import {RoomComponent} from "./room.component";
@@ -16,8 +14,5 @@ import {MainMenu} from "./mainmenu.component";
 @Injectable()
 export class AppComponent implements OnInit
 {
-    ngOnInit():void
-    {
-    }
-
+    ngOnInit():void {}
 }
