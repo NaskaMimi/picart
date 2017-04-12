@@ -27,6 +27,8 @@ export class Furniture implements AfterViewInit
         var element = document.getElementById(this.index);
         if(element)
         {
+            element.ondragstart = function() { return false; };
+            
             var style = document.getElementById(this.index).style;
             style.position = "absolute";
             style.top = this.top;
