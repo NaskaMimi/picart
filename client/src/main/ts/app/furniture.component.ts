@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Inject, Input} from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Inject, Input} from '@angular/core';
 
 @Component({
     selector: 'furniture',
@@ -6,26 +6,36 @@ import { Component, OnInit, ElementRef, Inject, Input} from '@angular/core';
     styleUrls: ['furniture.component.css']
 })
 
-export class Furniture implements OnInit
+export class Furniture implements AfterViewInit
 {
     gravityObject:Array;
     gravityInterval;
-    _url:string;
+
     @Input()
     urlImage:string;
-    urlImage2:string;
+    @Input()
+    index:string;
+    @Input()
+    top:string;
+    @Input()
+    left:string;
 
-    ngOnInit():void
+    ngAfterViewInit():void
     {
         this.gravityObject = [];
 
-        var style = document.getElementById("dragFurn").style;
-        style.position = "absolute";
-        style.top = "0px";
-        style.width = "100%";
-        style.height = "100%";
-        style.backgroundRepeat = "no-repeat";
-        style.backgroundImage = "url('" + this.urlImage + "')";
+        var element = document.getElementById(this.index);
+        if(element)
+        {
+            var style = document.getElementById(this.index).style;
+            style.position = "absolute";
+            style.top = this.top;
+            style.left = this.left;
+            style.width = "491px";
+            style.height = "198px";
+            style.backgroundRepeat = "no-repeat";
+            style.backgroundImage = "url('" + this.urlImage + "')";
+        }
 
     }
 
@@ -53,23 +63,26 @@ export class Furniture implements OnInit
     {
         if(this.draggableObject)
         {
-            this.draggableObject.style.top = event.clientY + "px";
-            this.draggableObject.style.left = event.clientX + "px";
+            var posx = event.clientX-this.convertStringToNumber(this.draggableObject.style.width)/2;
+            var posy = event.clientY-this.convertStringToNumber(this.draggableObject.style.height)/2;
+
+            this.draggableObject.style.top = posy + "px";
+            this.draggableObject.style.left = posx + "px";
         }
     }
 
     timer(gravityObject:HTMLDivElement):void
     {
-        var top = this.convertTopToNumber(gravityObject.style.top);
+        var top = this.convertStringToNumber(gravityObject.style.top);
         if(top<500)
        {
 
-           gravityObject.style.top = this.calculate(this.convertTopToNumber(gravityObject.style.top), 20)+"px";
+           gravityObject.style.top = this.calculate(this.convertStringToNumber(gravityObject.style.top), 20)+"px";
        }
         else clearInterval(this.gravityInterval);
     }
 
-    convertTopToNumber(top:string)
+    convertStringToNumber(top:string)
     {
         return top.substring(0, top.indexOf("p"));
     }

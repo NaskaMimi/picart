@@ -14,6 +14,6 @@ import {MainMenu} from "./mainmenu.component";
   declarations: [
     AppComponent, WallpaperListingComponent, MainpicComponent, RoomComponent, Furniture, MainMenu
   ],
-  bootstrap: [ AppComponent, WallpaperListingComponent, MainpicComponent, RoomComponent, MainMenu ]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
