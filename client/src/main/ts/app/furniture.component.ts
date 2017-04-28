@@ -19,6 +19,10 @@ export class Furniture implements AfterViewInit
     top:string;
     @Input()
     left:string;
+    @Input()
+    width:string;
+    @Input()
+    height:string;
 
     ngAfterViewInit():void
     {
@@ -33,10 +37,9 @@ export class Furniture implements AfterViewInit
             style.position = "absolute";
             style.top = this.top;
             style.left = this.left;
-            style.width = "491px";
-            style.height = "198px";
+            style.width = this.width;
+            style.height = this.height;
             style.backgroundRepeat = "no-repeat";
-            style.backgroundImage = "url('" + this.urlImage + "')";
         }
 
     }
@@ -76,7 +79,8 @@ export class Furniture implements AfterViewInit
     timer(gravityObject:HTMLDivElement):void
     {
         var top = this.convertStringToNumber(gravityObject.style.top);
-        if(top<500)
+        var height = this.convertStringToNumber(gravityObject.style.height);
+        if(top<500+parseInt(height))
        {
 
            gravityObject.style.top = this.calculate(this.convertStringToNumber(gravityObject.style.top), 20)+"px";
