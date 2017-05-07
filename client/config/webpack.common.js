@@ -5,9 +5,9 @@ var helpers = require('./helpers');
 
 module.exports = {
   entry: {
-    'polyfills': './client/src/main/ts/polyfills.ts',
-    'vendor': './client/src/main/ts/vendor.ts',
-    'app': './client/src/main/ts/main.ts'
+    'polyfills': './src/main/ts/polyfills.ts',
+    'vendor': './src/main/ts/vendor.ts',
+    'app': './src/main/ts/main.ts'
   },
 
   resolve: {
@@ -21,7 +21,7 @@ module.exports = {
         loaders: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: helpers.root('client/src/main/ts', 'tsconfig.json') }
+            options: { configFileName: helpers.root('tsconfig.json') }
           } , 'angular2-template-loader'
         ]
       },
@@ -35,12 +35,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: helpers.root('client/src/main/ts', 'app'),
+        exclude: helpers.root('src/main/ts', 'app'),
         loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
       },
       {
         test: /\.css$/,
-        include: helpers.root('client/src/main/ts', 'app'),
+        include: helpers.root('src/main/ts', 'app'),
         loader: 'raw-loader'
       }
     ]
@@ -51,7 +51,7 @@ module.exports = {
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      helpers.root('./client/src/main/ts'), // location of your src
+      helpers.root('./src/main/ts'), // location of your src
       {} // a map of your routes
     ),
 
@@ -60,7 +60,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: 'client/src/main/webapp/index.html'
+      template: 'src/main/webapp/index.html'
     })
   ]
 };

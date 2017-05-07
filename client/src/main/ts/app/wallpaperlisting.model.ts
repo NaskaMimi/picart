@@ -2,6 +2,6 @@ import { Wallpaper } from './wallpaper.model';
 
 export class WallpaperListing
 {
-    wallpapers:Array<Wallpaper>;
+    wallpapers:Wallpaper[];
     after:string;
 }

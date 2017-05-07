@@ -5,11 +5,10 @@ import { Component, AfterViewInit, ElementRef, Inject, Input} from '@angular/cor
     templateUrl: './furniture.component.html',
     styleUrls: ['furniture.component.css']
 })
-
 export class Furniture implements AfterViewInit
 {
-    gravityObject:Array;
-    gravityInterval;
+    gravityObject:[];
+    gravityInterval:any;
 
     @Input()
     urlImage:string;
