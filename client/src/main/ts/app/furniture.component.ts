@@ -80,7 +80,7 @@ export class Furniture implements AfterViewInit
     {
         var top = this.convertStringToNumber(gravityObject.style.top);
         var height = this.convertStringToNumber(gravityObject.style.height);
-        if(top<500+parseInt(height))
+        if(top<500-parseInt(height))
        {
 
            gravityObject.style.top = this.calculate(this.convertStringToNumber(gravityObject.style.top), 20)+"px";

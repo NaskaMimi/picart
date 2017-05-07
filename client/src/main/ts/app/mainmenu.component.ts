@@ -5,12 +5,13 @@ import {WallpaperListingComponent} from "./wallpaperlisting.component";
 @Component({
     selector: 'mainmenu',
     templateUrl: './mainmenu.component.html',
+    styleUrls: ['mainmenu.component.css'],
     providers: []
 })
 
 export class MainMenu
 {
-    constructor(@Inject(MainpicComponent) private mainpic: MainpicComponent, @Inject(WallpaperListingComponent) private list: WallpaperListingComponent)
+    constructor(@Inject(MainpicComponent) private mainpic: MainpicComponent, @Inject(WallpaperListingComponent) private itemsList: WallpaperListingComponent)
     {
 
     }
@@ -18,10 +19,12 @@ export class MainMenu
     hideDoll()
     {
         this.mainpic.hideThis();
+        this.itemsList.hideThis();
     }
 
     showDoll()
     {
         this.mainpic.showThis();
+        this.itemsList.showThis();
     }
 }

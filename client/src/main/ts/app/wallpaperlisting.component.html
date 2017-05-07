@@ -1,16 +1,16 @@
-<main style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; z-index:2; position: absolute; left: 50%; top: 0px;">
+<div id = "itemsList" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; z-index:2; position: absolute; left: 50%; top: 0px;">
     <button (click)="setType('dress')">Dress</button>
     <button (click)="setType('top')">Top</button>
     <button (click)="setType('bottom')">Bottom</button>
     <div class="main-container">
 
         <br>
-        <div class="image-container" *ngFor="let wallpaper of wallpaperListing.wallpapers">
+        <div *ngFor="let wallpaper of wallpaperListing.wallpapers">
 
             <div (click)="open(wallpaper.url)">
                 <img src="{{wallpaper.url}}" class="image-item" width="20%" height="20%"/>
             </div>
         </div>
-        <div *ngIf="error" class="image-container load-more">There was an error connecting to reddit. Please try again later.</div>
+        <div *ngIf="error">There was an error connecting to reddit. Please try again later.</div>
     </div>
-</main>
+</div>

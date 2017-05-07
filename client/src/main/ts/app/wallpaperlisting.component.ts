@@ -98,40 +98,40 @@ export class WallpaperListingComponent implements OnInit
         return listing;
     }
 
-loadBottom()
-{
-    let listing = new WallpaperListing();
-    let wallpapers = new Array<Wallpaper>();
+    loadBottom()
+    {
+        let listing = new WallpaperListing();
+        let wallpapers = new Array<Wallpaper>();
 
-    let item = new Wallpaper();
-    item.url = "./client/src/main/ts/assets/images/cloth/niz/42.png";
-    item.title = "Flut1";
-    wallpapers.push(item);
+        let item = new Wallpaper();
+        item.url = "./client/src/main/ts/assets/images/cloth/niz/42.png";
+        item.title = "Flut1";
+        wallpapers.push(item);
 
-    let item2 = new Wallpaper();
-    item2.url = "./client/src/main/ts/assets/images/cloth/niz/43.png";
-    item2.title = "Flut2";
-    wallpapers.push(item2);
+        let item2 = new Wallpaper();
+        item2.url = "./client/src/main/ts/assets/images/cloth/niz/43.png";
+        item2.title = "Flut2";
+        wallpapers.push(item2);
 
-    let item3 = new Wallpaper();
-    item3.url = "./client/src/main/ts/assets/images/cloth/niz/44.png";
-    item3.title = "Flut2";
-    wallpapers.push(item3);
+        let item3 = new Wallpaper();
+        item3.url = "./client/src/main/ts/assets/images/cloth/niz/44.png";
+        item3.title = "Flut2";
+        wallpapers.push(item3);
 
-    let item4 = new Wallpaper();
-    item4.url = "./client/src/main/ts/assets/images/cloth/niz/45.png";
-    item4.title = "Flut2";
-    wallpapers.push(item4);
+        let item4 = new Wallpaper();
+        item4.url = "./client/src/main/ts/assets/images/cloth/niz/45.png";
+        item4.title = "Flut2";
+        wallpapers.push(item4);
 
-    let item5 = new Wallpaper();
-    item5.url = "./client/src/main/ts/assets/images/cloth/niz/46.png";
-    item5.title = "Flut2";
-    wallpapers.push(item5);
+        let item5 = new Wallpaper();
+        item5.url = "./client/src/main/ts/assets/images/cloth/niz/46.png";
+        item5.title = "Flut2";
+        wallpapers.push(item5);
 
-    listing.wallpapers = wallpapers;
-    listing.after = "";
-    return listing;
-}
+        listing.wallpapers = wallpapers;
+        listing.after = "";
+        return listing;
+    }
 
     loadDresses()
     {
@@ -166,5 +166,15 @@ loadBottom()
         listing.wallpapers = wallpapers;
         listing.after = "";
         return listing;
+    }
+
+    hideThis()
+    {
+        document.getElementById("itemsList").style.left = "7300px";
+    }
+
+    showThis()
+    {
+        document.getElementById("itemsList").style.left = "50%";
     }
 }
