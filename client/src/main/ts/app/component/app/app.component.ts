@@ -1,8 +1,8 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import {WallpaperListingComponent} from './wallpaperlisting.component';
-import {MainpicComponent} from "./mainpic.component";
-import {RoomComponent} from "./room.component";
-import {MainMenu} from "./mainmenu.component";
+import {WallpaperListingComponent} from '../objectBar/wallpaperlisting.component';
+import {MainpicComponent} from "../mainpic/mainpic.component";
+import {RoomComponent} from "../room/room.component";
+import {MainMenu} from "../mainmenu/mainmenu.component";
 
 @Component({
   selector: 'my-app',

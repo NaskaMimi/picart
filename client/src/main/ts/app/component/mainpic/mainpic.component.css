@@ -1,0 +1,32 @@
+.doll_container{
+    position: relative;
+    left: 180px;
+    top: 60px;
+    width: 300px;
+}
+
+#my_image {
+    left: 80px;
+    top: 40px;
+}
+
+#dress {
+    position: absolute;
+    left: -26px;
+    top: 45px;
+    width: 130%;
+}
+
+#top {
+    position: absolute;
+    left: 55px;
+    top: 65px;
+    width: 65%;
+}
+
+#bottom {
+    position: absolute;
+    left: 73px;
+    top: 145px;
+    width: 53%;
+}
