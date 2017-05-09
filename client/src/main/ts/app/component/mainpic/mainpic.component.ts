@@ -3,13 +3,11 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import {WallpaperListingComponent} from '../objectBar/wallpaperlisting.component';
 
 @Component({
-    selector: 'main-pic',
+    selector: 'mainpic',
     templateUrl: './mainpic.component.html',
-    styleUrls: ['mainpic.component.css'],
-    directives: [ WallpaperListingComponent ]
+    styleUrls: ['mainpic.component.css']
 })
 
-@Injectable()
 export class MainpicComponent implements OnInit
 {
     urlImage:string;
@@ -21,7 +19,7 @@ export class MainpicComponent implements OnInit
     }
 
     say(url:string) {
-        document.getElementById("my_image").src = url;
+        (document.getElementById("my_image") as HTMLImageElement).src = url;
     }
 
     hideThis()
@@ -35,21 +33,21 @@ export class MainpicComponent implements OnInit
     }
 
     setDress(url:string) {
-        document.getElementById("dress").src = url;
+        (document.getElementById("dress") as HTMLImageElement).src = url;
         document.getElementById("dress").style.opacity = "1";
         document.getElementById("top").style.opacity = "0";
         document.getElementById("bottom").style.opacity = "0";
     }
 
     setTop(url:string) {
-        document.getElementById("top").src = url;
+        (document.getElementById("top") as HTMLImageElement).src = url;
         document.getElementById("dress").style.opacity = "0";
         document.getElementById("top").style.opacity = "1";
         document.getElementById("bottom").style.opacity = "1";
     }
 
     setBottom(url:string) {
-        document.getElementById("bottom").src = url;
+        (document.getElementById("bottom") as HTMLImageElement).src = url;
         document.getElementById("dress").style.opacity = "0";
         document.getElementById("top").style.opacity = "1";
         document.getElementById("bottom").style.opacity = "1";

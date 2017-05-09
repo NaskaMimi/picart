@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Inject, Input} from '@angular/core';
+import { Component, AfterViewInit, Input} from '@angular/core';
 
 @Component({
     selector: 'furniture',

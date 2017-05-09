@@ -2,15 +2,14 @@
     <h1>Click on Fluttershy</h1>
 
     <room></room>
-    <mainmenu></mainmenu>
+
     <table>
         <td valign="top" width="60%">
-            <mainmenu></mainmenu>
-            <main-pic></main-pic>
+            <mainpic #mainpic></mainpic>
         </td>
         <td align="right" valign="top" width="40%">
-            <wallpaper-listing></wallpaper-listing>
+            <bar #bar></bar>
         </td>
     </table>
-
+    <mainmenu [mainpicref]="mainpic" [barref]="bar"></mainmenu>
 </main>
